@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Automate Prime | Accelerate Your Digital Future</title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/ramilmendoza/Images/main/AutomatePrimeLogo.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0f172a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #3b82f6;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #2563eb;
+      }
+      
+      .font-heading {
+        font-family: 'Orbitron', sans-serif;
+      }
+      .font-tech {
+        font-family: 'Rajdhani', sans-serif;
+      }
+      .font-body {
+        font-family: 'Inter', sans-serif;
+      }
+
+      /* Animations */
+      @keyframes pulse-glow {
+        0%, 100% { box-shadow: 0 0 10px rgba(59, 130, 246, 0.3); }
+        50% { box-shadow: 0 0 25px rgba(59, 130, 246, 0.6); }
+      }
+      .animate-pulse-glow {
+        animation: pulse-glow 3s infinite;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in-up {
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+      
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+      .animate-blink {
+        animation: blink 1s step-end infinite;
+      }
+      
+      .bg-grid-pattern {
+        background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+                          linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              prime: {
+                dark: '#020617', // Deep Slate
+                blue: '#002B5B', // Brand Blue
+                light: '#00A8E8', // Electric Cyan
+                accent: '#D7263D', // Brand Red
+                silver: '#C0C0C0', // Metallic
+              }
+            },
+            fontFamily: {
+              heading: ['Orbitron', 'sans-serif'],
+              tech: ['Rajdhani', 'sans-serif'],
+              body: ['Inter', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "vite": "https://aistudiocdn.com/vite@^7.2.4",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
+  }
+}
+</script>
+</head>
+  <body class="text-white overflow-x-hidden transition-colors duration-300">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
