@@ -1,5 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
+// Gemini API Service - Updated to use gemini-1.5-flash
 const apiKey = import.meta.env.VITE_API_KEY;
 
 if (!apiKey) {
