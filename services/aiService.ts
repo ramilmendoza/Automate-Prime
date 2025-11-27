@@ -3,6 +3,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 // Gemini API Service - Using gemini-pro for maximum compatibility
 // TEMPORARY: Hardcoded API key for testing
 const apiKey = "AIzaSyCVbiPIc323baQLmENfQrrdDeAOLNWjs_E";
+console.log("🔑 Using hardcoded API key for testing"); // Debug log
 
 // Original code (commented out for testing):
 // const apiKey = import.meta.env.VITE_API_KEY;
