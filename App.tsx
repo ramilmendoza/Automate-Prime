@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { Logo } from './components/Logo';
 import { Hero } from './components/Hero';
-import { AIModal } from './components/AIModal';
 import { BookingModal } from './components/BookingModal';
-import { SERVICES, TEAM_MEMBERS, CASE_STUDIES, Icons } from './constants';
+import { SERVICES, TEAM_MEMBERS, CASE_STUDIES } from './constants';
 
 export default function App() {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [isAIModalOpen, setIsAIModalOpen] = useState(false);
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
@@ -33,13 +31,6 @@ export default function App() {
             <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="hover:text-prime-light transition-colors cursor-pointer">SERVICES</a>
             <a href="#why-us" onClick={(e) => handleNavClick(e, 'why-us')} className="hover:text-prime-light transition-colors cursor-pointer">WHY US</a>
             <a href="#team" onClick={(e) => handleNavClick(e, 'team')} className="hover:text-prime-light transition-colors cursor-pointer">TEAM</a>
-            <button 
-              onClick={() => setIsAIModalOpen(true)}
-              className="flex items-center gap-2 px-4 py-2 border border-prime-light text-prime-light rounded hover:bg-prime-light hover:text-black transition-all"
-            >
-              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-              ASK AI
-            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -59,12 +50,6 @@ export default function App() {
             <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="block hover:text-prime-light cursor-pointer">SERVICES</a>
             <a href="#why-us" onClick={(e) => handleNavClick(e, 'why-us')} className="block hover:text-prime-light cursor-pointer">WHY US</a>
             <a href="#team" onClick={(e) => handleNavClick(e, 'team')} className="block hover:text-prime-light cursor-pointer">TEAM</a>
-            <button 
-              onClick={() => { setIsAIModalOpen(true); setIsNavOpen(false); }}
-              className="w-full text-left text-prime-light"
-            >
-              AI CONSULTANT
-            </button>
           </div>
         )}
       </nav>
@@ -209,23 +194,7 @@ export default function App() {
       </footer>
 
       {/* Modals */}
-      <AIModal isOpen={isAIModalOpen} onClose={() => setIsAIModalOpen(false)} />
       <BookingModal isOpen={isBookingModalOpen} onClose={() => setIsBookingModalOpen(false)} />
-      
-      {/* Floating AI Trigger (if modal closed) */}
-      {!isAIModalOpen && (
-        <button 
-          onClick={() => setIsAIModalOpen(true)}
-          className="fixed bottom-8 right-8 bg-prime-accent hover:bg-red-600 text-white p-4 rounded-full shadow-2xl z-40 transition-all hover:scale-110 group"
-          aria-label="Open AI Assistant"
-        >
-          <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full border-2 border-gray-900"></div>
-          <Icons.AI />
-          <span className="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-white text-black px-3 py-1 rounded text-sm font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-            Ask AI
-          </span>
-        </button>
-      )}
     </div>
   );
 }
