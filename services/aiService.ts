@@ -1,10 +1,10 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // Gemini API Service - Using gemini-pro for maximum compatibility
-// TEMPORARY: Hardcoded API key for testing
+// TEMPORARY: Testing NEW API key
 console.log("KEY:", import.meta.env.VITE_API_KEY); // Check env var
-const apiKey = "AIzaSyCVbiPIc323baQLmENfQrrdDeAOLNWjs_E";
-console.log("🔑 Using hardcoded API key for testing"); // Debug log
+const apiKey = "AIzaSyBq1hl3iDJ-PiRotfraNuYFO90rUgy3K7A"; // NEW KEY
+console.log("🔑 Using NEW hardcoded API key for testing"); // Debug log
 
 // Original code (commented out for testing):
 // const apiKey = import.meta.env.VITE_API_KEY;
