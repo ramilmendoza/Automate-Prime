@@ -4,7 +4,8 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 const apiKey = import.meta.env.VITE_API_KEY;
 
 if (!apiKey) {
-  throw new Error("VITE_API_KEY is not defined");
+  console.error("VITE_API_KEY is not defined. Please check your environment variables.");
+  throw new Error("VITE_API_KEY is not defined - API key must be set in environment variables");
 }
 
 const genAI = new GoogleGenerativeAI(apiKey);
@@ -35,8 +36,14 @@ export const getAIResponse = async (userQuery: string): Promise<string> => {
     const result = await model.generateContent(userQuery);
     const response = await result.response;
     return response.text();
-  } catch (error) {
+  } catch (error: any) {
     console.error("AI Service Error:", error);
+
+    // Provide more specific error messages for common issues
+    if (error?.message?.includes("API_KEY_INVALID") || error?.message?.includes("API Key not found")) {
+      return "Unable to connect to AI service. Please check that the API key is configured correctly.";
+    }
+
     return "Our AI systems are currently optimizing. Please try again shortly.";
   }
 };
