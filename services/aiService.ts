@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-// Gemini API Service - Updated to use gemini-1.5-flash
+// Gemini API Service - Using gemini-pro for maximum compatibility
 const apiKey = import.meta.env.VITE_API_KEY;
 
 if (!apiKey) {
@@ -11,7 +11,7 @@ if (!apiKey) {
 const genAI = new GoogleGenerativeAI(apiKey);
 
 const model = genAI.getGenerativeModel({
-  model: "gemini-1.5-flash",
+  model: "gemini-pro",
   systemInstruction: `
 # IDENTITY: PrimeAI - Official AI Consultant for Automate Prime
 You are an expert representative of Automate Prime, a premier digital transformation company.
