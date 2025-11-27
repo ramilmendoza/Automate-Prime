@@ -1,12 +1,15 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // Gemini API Service - Using gemini-pro for maximum compatibility
-const apiKey = import.meta.env.VITE_API_KEY;
+// TEMPORARY: Hardcoded API key for testing
+const apiKey = "AIzaSyCVbiPIc323baQLmENfQrrdDeAOLNWjs_E";
 
-if (!apiKey) {
-  console.error("VITE_API_KEY is not defined. Please check your environment variables.");
-  throw new Error("VITE_API_KEY is not defined - API key must be set in environment variables");
-}
+// Original code (commented out for testing):
+// const apiKey = import.meta.env.VITE_API_KEY;
+// if (!apiKey) {
+//   console.error("VITE_API_KEY is not defined. Please check your environment variables.");
+//   throw new Error("VITE_API_KEY is not defined - API key must be set in environment variables");
+// }
 
 const genAI = new GoogleGenerativeAI(apiKey);
 
